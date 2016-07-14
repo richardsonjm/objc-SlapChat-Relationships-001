@@ -59,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.store.messages count];
+    return [self.managedMessageObjects count];
 }
 
 
@@ -67,7 +67,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basiccell" forIndexPath:indexPath];
     
-    Message *eachMessage = self.store.messages[indexPath.row];
+    Message *eachMessage = self.managedMessageObjects[indexPath.row];
     
     cell.textLabel.text = eachMessage.content;
     
